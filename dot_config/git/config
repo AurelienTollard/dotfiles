@@ -1,0 +1,21 @@
+[user]
+	name = AurelienT
+	email = tollard.aurelien1999@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	psu = push -u origin HEAD
+	ps = push
+	wip = commit -am "WIP"
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = true
+[push]
+    default = simple
+    autoSetupRemote = true
+[credential]
+    helper = cache --timeout=3600
+
