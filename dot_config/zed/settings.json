@@ -1,0 +1,53 @@
+{
+    "show_edit_predictions": true,
+    "always_treat_brackets_as_autoclosed": true,
+    "indent_guides": {
+        "background_coloring": "indent_aware",
+        "coloring": "indent_aware",
+    },
+    "colorize_brackets": true,
+    "use_on_type_format": false,
+    "format_on_save": "on",
+    "tab_size": 4,
+    "hard_tabs": false,
+    "icon_theme": "Catppuccin Latte",
+    "preview_tabs": {
+        "enabled": false,
+    },
+    "diagnostics": {
+        "inline": {
+            "enabled": true,
+        },
+    },
+    "theme": "Dracula",
+    "hide_mouse": "never",
+    "cursor_shape": "bar",
+    "cursor_blink": false,
+    "buffer_font_size": 14.0,
+    "buffer_font_family": "JetBrainsMono Nerd Font",
+    "vim_mode": true,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+    },
+    "features": {
+        "edit_prediction_provider": "copilot",
+    },
+    "lsp": {
+        "yaml-language-server": {
+            "settings": {
+                "yaml": {
+                    "format": {
+                        "singleQuote": true,
+                    }
+                },
+            },
+        },
+    },
+    "languages": {
+            "formatter": "language_server",
+            "tab_size": 2,
+        }
+    },
+}
+
