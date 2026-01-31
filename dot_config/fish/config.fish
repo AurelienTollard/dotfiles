@@ -46,4 +46,5 @@ set -gx PIXI_HOME "$XDG_CONFIG_HOME/pixi"
 if status is-interactive
 	zoxide init fish | source
 	starship init fish | source
+	eval (zellij setup --generate-auto-start fish | string collect)
 end
