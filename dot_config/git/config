@@ -1,0 +1,19 @@
+[user]
+	name = aurelientollard
+	email = tollard.aurelien1999@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	psu = push -u origin HEAD
+	ps = push
+	wip = commit -am "WIP"
+[init]
+	defaultBranch = main
+[push]
+    default = simple
+    autoSetupRemote = true
+
+[includeIf "hasconfig:remote.*.url:https://github.six.internal/**"]
+    path = ~/.config/git/config_six

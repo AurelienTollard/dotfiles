@@ -1,0 +1,156 @@
+{
+    "cli_default_open_behavior": "existing_window",
+    "icon_theme": {
+        "mode": "light",
+        "light": "Zed (Default)",
+        "dark": "Zed (Default)",
+    },
+    "proxy": "",
+    "agent_servers": {
+        "codex-acp": {
+            "type": "registry",
+        },
+        "opencode": {
+            "type": "registry",
+        },
+    },
+    "project_panel": {
+        "dock": "left",
+    },
+    "outline_panel": {
+        "dock": "left",
+    },
+    "collaboration_panel": {
+        "dock": "left",
+    },
+    "git_panel": {
+        "dock": "left",
+    },
+    "ssh_connections": [
+        {
+            "host": "172.16.2.119",
+            "username": "elliptic",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/elliptic"],
+                },
+            ],
+        },
+        {
+            "host": "172.16.2.119",
+            "username": "elliptic",
+            "args": [],
+            "projects": [],
+        },
+        {
+            "host": "172.16.2.119",
+            "username": "pi",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/pi/syntiant-sdk-v63"],
+                },
+            ],
+        },
+        {
+            "host": "213.192.2.124",
+            "username": "root",
+            "port": 40127,
+            "args": ["-i", "~/.ssh/id_ed25519"],
+            "projects": [
+                {
+                    "paths": ["/root"],
+                },
+            ],
+        },
+        {
+            "host": "213.192.2.90",
+            "username": "root",
+            "port": 40073,
+            "args": ["-i", "~/.ssh/id_ed25519"],
+            "projects": [
+                {
+                    "paths": ["/root"],
+                },
+            ],
+        },
+        {
+            "host": "69.30.85.207",
+            "username": "root",
+            "port": 22069,
+            "args": ["-i", "~/.ssh/id_ed25519"],
+            "projects": [
+                {
+                    "paths": ["/root"],
+                },
+            ],
+        },
+    ],
+    "agent": {
+        "dock": "right",
+        "favorite_models": [],
+        "inline_assistant_model": {
+            "provider": "copilot_chat",
+            "model": "claude-opus-4.6",
+            "enable_thinking": false,
+        },
+        "model_parameters": [],
+    },
+    "edit_predictions": {
+        "provider": "zed",
+    },
+    "show_edit_predictions": true,
+    "always_treat_brackets_as_autoclosed": true,
+    "indent_guides": {
+        "background_coloring": "indent_aware",
+        "coloring": "indent_aware",
+    },
+    "colorize_brackets": true,
+    "use_on_type_format": false,
+    "format_on_save": "on",
+    "tab_size": 4,
+    "hard_tabs": false,
+    "preview_tabs": {
+        "enabled": false,
+    },
+    "diagnostics": {
+        "inline": {
+            "enabled": true,
+        },
+    },
+    "theme": {
+        "mode": "dark",
+        "light": "One Light",
+        "dark": "DankShell Dark Transparent",
+    },
+    "hide_mouse": "never",
+    "cursor_shape": "bar",
+    "cursor_blink": false,
+    "buffer_font_size": 14.0,
+    "buffer_font_family": "JetBrainsMono Nerd Font",
+    "vim_mode": true,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+    },
+    "lsp": {
+        "yaml-language-server": {
+            "settings": {
+                "yaml": {
+                    "format": {
+                        "singleQuote": true,
+                    },
+                },
+            },
+        },
+    },
+    "languages": {
+        "Python": {
+            "language_servers": ["pyright", "!basedpyright", "ruff"],
+        },
+    },
+    "status_bar": {
+        "line_endings_button": true,
+    },
+}
