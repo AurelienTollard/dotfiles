@@ -1,0 +1,22 @@
+# Builds every configuration on each push/PR, so a broken commit or flake.lock
+# bump is caught before any machine pulls it.
+name: check
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Free disk space
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache
+      - name: Build configurations (flake checks)
+        run: |
+          nix build -L --no-link \
+            .#checks.x86_64-linux.home-work \
+            .#checks.x86_64-linux.vm

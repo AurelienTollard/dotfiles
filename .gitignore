@@ -1,0 +1,13 @@
+result
+result-*
+
+# Runtime junk apps write into the live-linked dotfiles/ dirs
+dotfiles/niri/*.backup*
+dotfiles/niri/*.dmsbackup*
+dotfiles/niri/*.pre-*
+dotfiles/dms/.firstlaunch
+dotfiles/dms/.changelog-*
+*.bak
+
+# Never commit decryption keys
+keys.txt

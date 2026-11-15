@@ -1,0 +1,26 @@
+# Weekly PR bumping flake.lock; the check workflow builds it before you merge.
+# Note: GitHub only runs scheduled workflows from the default branch.
+name: update-flake-lock
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nix
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/update-flake-lock@main
+        with:
+          base: nix
+          pr-title: "flake.lock: update"
+          # The local sc200pc input can't be fetched in CI; update the rest.
+          inputs: nixpkgs home-manager disko sops-nix claude-desktop

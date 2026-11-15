@@ -1,0 +1,18 @@
+# Who can decrypt secrets/*.yaml. Edit secrets with: sops secrets/secrets.yaml
+# Adding a key (another person or a machine's host key)? Add it below, then run
+#   sops updatekeys secrets/secrets.yaml
+keys:
+  - &aurelient age1rpww29h389cewt8ywkn2f5sclt3jf7yg4whqsgx79k9z03rgzp7sdv85ly
+  # Work laptop's own key (age-keygen on that machine), so it can only read work.yaml.
+  # - &work age1...
+creation_rules:
+  # Work-only secrets (git work identity); first matching rule wins.
+  - path_regex: secrets/work\.yaml$
+    key_groups:
+      - age:
+          - *aurelient
+          # - *work
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+          - *aurelient
