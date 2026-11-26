@@ -12,6 +12,5 @@
     niri = "niri";
     DankMaterialShell = "dms"; # DMS reads both names
     dms = "dms";
-    cava = "cava";
   };
 }

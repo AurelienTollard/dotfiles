@@ -27,7 +27,7 @@ NixOS + home-manager configuration.
 
 ## Dotfiles
 
-Configs that apps edit themselves (Zed, niri, DMS, Alacritty, zellij, starship, cava)
+Configs that apps edit themselves (Zed, niri, DMS, Alacritty, zellij, starship)
 live as plain files in `dotfiles/` and are symlinked into `~/.config`, pointing at
 this checkout rather than the Nix store:
 
