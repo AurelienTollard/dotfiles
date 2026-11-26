@@ -6,11 +6,9 @@
     pnpm
     nixd
     nil
-    codex
-    pi-coding-agent
     sops # edit secrets/: sops secrets/secrets.yaml
     age
-    lazydocker # TUI for containers, logs and compose stacks
+    lazydocker
   ];
 
   programs.uv = {
