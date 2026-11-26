@@ -59,6 +59,4 @@ in
     # git skips it until it exists).
     includes = [ { path = config.sops.templates."git-work.inc".path; } ];
   };
-
-  home.packages = [ pkgs.jujutsu ];
 }

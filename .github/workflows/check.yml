@@ -20,3 +20,31 @@ jobs:
           nix build -L --no-link \
             .#checks.x86_64-linux.home-work \
             .#checks.x86_64-linux.vm
+
+  # Activates the standalone home-manager config on the (non-NixOS) Ubuntu
+  # runner via bootstrap.sh, the same path the work laptop takes.
+  home-activate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Free disk space
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache
+      # home.username/homeDirectory are fixed, so activate as that user.
+      - name: Create user and copy this checkout
+        run: |
+          sudo useradd --create-home --shell /bin/bash aurelient
+          sudo cp -r "$GITHUB_WORKSPACE" /home/aurelient/nixos-config
+          sudo chown -R aurelient: /home/aurelient/nixos-config
+      - name: Run bootstrap.sh
+        run: sudo -iu aurelient bash /home/aurelient/nixos-config/bootstrap.sh
+      - name: Smoke test
+        run: |
+          sudo -iu aurelient bash -lc '
+            set -e
+            . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+            home-manager generations
+            fish -c "type -q hms"
+            git config --get user.name
+          '
